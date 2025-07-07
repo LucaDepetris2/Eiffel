@@ -1,0 +1,141 @@
+<div id="ventana-listados" class="ventana bg-white p-6 rounded-2xl shadow-2xl w-[720px] font-sans text-sm"
+    style="display: none">
+    <div class="ventana-header !rounded-t-2xl !text-white !bg-slate-700">
+        <span class="text-base font-semibold">Listado de Comprobantes de ventas</span>
+        <div class="ventana-botones">
+            <button id="minimizar-listados">_</button>
+            <button id="cerrar-listados">×</button>
+        </div>
+    </div>
+
+    <div class="ventana-body ventana-listados-body grid gap-4">
+        <fieldset>
+            <legend class="font-semibold text-gray-800">Formato</legend>
+            <label class="block">
+                <span class="text-gray-600">Título</span>
+                <input type="text" value="LISTADOS = FTC - N/C - N/D"
+                    class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2" />
+            </label>
+
+            <div class="flex gap-4 mt-3">
+                <label class="flex-1">
+                    <span class="text-gray-600">Órden</span>
+                    <select class="w-full mt-1 rounded-md border border-gray-300 px-3 py-2">
+                        <option>Razón social</option>
+                        <option>Fecha</option>
+                        <option>Importe</option>
+                    </select>
+                </label>
+                <label class="flex-[0.3]">
+                    <span class="text-gray-600">Formato</span>
+                    <input type="number" value="1" class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2" />
+                </label>
+            </div>
+        </fieldset>
+
+        <div class="grid grid-cols-2 gap-4">
+            <fieldset>
+                <legend class="font-semibold text-gray-800">
+                    Selectivo Filtros
+                </legend>
+                <label>Zonas:
+                    <span class="ml-2 text-blue-600 font-medium">Todos</span></label><br />
+                <label>Comprobantes:
+                    <span class="ml-2 text-blue-600 font-medium">Algunos</span></label><br />
+                <label>Vendedores:
+                    <span class="ml-2 text-blue-600 font-medium">Alguno</span></label><br />
+                <label>Solo pendiente a de:
+                    <span class="ml-2 text-blue-600 font-medium">Todo</span></label>
+            </fieldset>
+
+            <fieldset>
+                <legend class="font-semibold text-gray-800">
+                    Filtros por Rango
+                </legend>
+                <label>Clientes:
+                    <span class="ml-2 text-blue-600 font-medium">Primero</span></label><br />
+                <label>Bonificación 1:
+                    <span class="ml-2 text-blue-600 font-medium">Primero</span></label><br />
+                <label>Bonificación 2:
+                    <span class="ml-2 text-blue-600 font-medium">Primero</span></label><br />
+                <label>Fecha Proceso:
+                    <span class="ml-2 text-blue-600 font-medium">Último</span></label>
+            </fieldset>
+        </div>
+
+        <fieldset>
+            <legend class="font-semibold text-gray-800">Datos</legend>
+            <label>Solo anulados:
+                <span class="ml-2 text-blue-600 font-medium">No</span></label>
+        </fieldset>
+
+        <div class="grid grid-cols-2 gap-4 items-start">
+            <div class="flex gap-2">
+                <button class="bg-white border border-gray-300 p-2 rounded shadow">
+                    <img src="assets/img/Pantalla.bmp" alt="Guardar" class="w-10 h-10" />
+                </button>
+                <button class="bg-white border border-gray-300 p-2 rounded shadow">
+                    <img src="assets/img/ExcelNuevo.bmp" alt="Excel" class="w-10 h-10" />
+                </button>
+            </div>
+
+            <div class="space-y-2">
+                <select class="w-full rounded-md border border-gray-300 px-3 py-2">
+                    <option>Microsoft Impresora</option>
+                </select>
+                <label class="block text-blue-600 text-sm">Utilidad de Copias: 1</label>
+                <div class="flex flex-col gap-1 text-xs">
+                    <label><input type="checkbox" /> Utilizar separador de miles</label>
+                    <label><input type="checkbox" /> Enviar Word / Excel / Ascii /
+                        Email</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-end gap-4 mt-4">
+            <button class="imprimir-btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                Imprimir
+            </button>
+            <button class="cerrar-listado-btn bg-gray-100 text-gray-800 px-4 py-2 rounded border hover:bg-gray-200">
+                Cerrar
+            </button>
+        </div>
+    </div>
+</div>
+
+<div id="listado-generado" class="ventana bg-white p-6 rounded-2xl shadow-xl w-[600px] font-sans text-sm"
+    style="display: none">
+    <div class="ventana-header !rounded-t-2xl !text-white !bg-slate-700">
+        <span class="text-base font-semibold">Listado Generado</span>
+        <div class="ventana-botones">
+            <button onclick="document.getElementById('listado-generado').style.display = 'none'">
+                ×
+            </button>
+        </div>
+    </div>
+
+    <div class="ventana-body mt-4">
+        <table class="w-full border-collapse text-sm">
+            <thead>
+                <tr class="bg-gray-100">
+                    <th class="border px-3 py-2 text-left">Nombre del Comprobante</th>
+                    <th class="border px-3 py-2 text-right">Importe</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="hover:bg-gray-50">
+                    <td class="border px-3 py-2">Factura A</td>
+                    <td class="border px-3 py-2 text-right">$1500.00</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                    <td class="border px-3 py-2">Recibo B</td>
+                    <td class="border px-3 py-2 text-right">$250.50</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                    <td class="border px-3 py-2">Ticket C</td>
+                    <td class="border px-3 py-2 text-right">$800.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

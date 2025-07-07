@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Menú lateral Eiffel</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body>
+    <img src="img/AcuaTorre.png" alt="Fondo" class="background-image" />
+    <div class="sidebar">
+      <div class="logo-container">
+        <img
+          src="assets/img/NaranjaTorre.png"
+          alt="Logo"
+          width="60"
+          height="104"
+        />
+      </div>
+
+      <div class="menu-item" data-submenu="archivosSubmenu">
+        <a href="#">Archivos ▸</a>
+        <div class="submenu" id="archivosSubmenu">
+          <div class="menu-item" data-submenu="archivosAnidadosSubmenu">
+            <a href="#">Archivos ▸</a>
+            <div class="submenu" id="archivosAnidadosSubmenu">
+              <a href="#" class="no-submenu-arrow">Cargos</a>
+              <a href="#" class="no-submenu-arrow">Categorías de Iva</a>
+              <a href="#" class="no-submenu-arrow">Centros de costos</a>
+              <a href="#" class="no-submenu-arrow">Conceptos</a>
+              <a href="#" class="no-submenu-arrow">CUITS bloqueados</a>
+              <a href="#" class="no-submenu-arrow">Días feriados</a>
+              <a href="#" class="no-submenu-arrow">Empresas</a>
+              <a href="#" class="no-submenu-arrow">Grupos sucursal</a>
+              <a href="#" class="no-submenu-arrow">Monedas</a>
+            </div>
+          </div>
+
+          <div class="menu-item" data-submenu="listadosSubmenu">
+            <a href="#">Listados ▸</a>
+            <div class="submenu" id="listadosSubmenu">
+              <a href="#" class="no-submenu-arrow">Cargos</a>
+              <a href="#" class="no-submenu-arrow">Categorías de Iva</a>
+              <a href="#" class="no-submenu-arrow">Centros de costos</a>
+              <a href="#" class="no-submenu-arrow">Conceptos</a>
+              <a href="#" class="no-submenu-arrow">CUITS bloqueados</a>
+              <a href="#" class="no-submenu-arrow">Días feriados</a>
+              <a href="#" class="no-submenu-arrow">Empresas</a>
+              <a href="#" class="no-submenu-arrow">Grupos sucursal</a>
+              <a href="#" class="no-submenu-arrow">Monedas</a>
+            </div>
+          </div>
+
+          <a href="#" class="no-submenu-arrow">Preparar pagina</a>
+          <a href="#" class="no-submenu-arrow">Configurar Impresoras</a>
+          <a href="#" class="no-submenu-arrow"
+            >Configurar impresion de comprobantes</a
+          >
+          <a href="#" class="no-submenu-arrow">Cambio de empresa</a>
+          <a href="#" class="no-submenu-arrow">Cambio de fecha y usuario</a>
+          <a href="#" class="no-submenu-arrow">Configurar tema</a>
+          <a href="#" class="no-submenu-arrow">Actualizaciones</a>
+          <a href="#" class="no-submenu-arrow">Config. del usuario</a>
+          <a href="#" class="no-submenu-arrow">Cubos dinamicos</a>
+          <a href="#" class="no-submenu-arrow">Operaciones por usuario</a>
+          <a href="#">Circuito de operaciones por comprobante ▸</a>
+        </div>
+      </div>
+
+      <div class="menu-item" data-submenu="ventasSubmenu">
+        <a href="#">Ventas ▸</a>
+        <div class="submenu" id="ventasSubmenu">
+          <a href="#">Archivos ▸</a>
+          <a href="#">Listado de Archivos ▸</a>
+          <a href="#" class="no-submenu-arrow">Confección de comprobantes</a>
+          <a href="#" class="no-submenu-arrow">Imputación de comprobantes</a>
+          <a href="#" class="no-submenu-arrow">Cobranza cuenta corriente</a>
+          <a href="#">Lista de precios ▸</a>
+          <a href="#">Consultas ▸</a>
+          <a href="#" class="no-submenu-arrow">Listados</a>
+          <a href="#" class="no-submenu-arrow"
+            >Confección de Comprobantes (Vendedores)</a
+          >
+          <a href="#" class="no-submenu-arrow"
+            >Confección de Comprobantes (Cobradores)</a
+          >
+          <a href="#">Asignación de comisiones ▸</a>
+          <a href="#">AFIP interfaces ▸</a>
+          <a href="#" class="no-submenu-arrow">Impresora fiscal</a>
+        </div>
+      </div>
+
+      <div class="menu-item" data-submenu="comprasSubmenu">
+        <a href="#">Compras ▸</a>
+        <div class="submenu" id="comprasSubmenu">
+          <a href="#" class="no-submenu-arrow">Pedidos</a>
+          <a href="#" class="no-submenu-arrow">Facturas</a>
+          <a href="#" class="no-submenu-arrow">Pagos</a>
+          <a href="#" class="no-submenu-arrow">Confección de comprobantes (Compras)</a>
+        </div>
+      </div>
+
+      <div class="menu-item" data-submenu="tesoreriaSubmenu">
+        <a href="#">Tesorería ▸</a>
+        <div class="submenu" id="tesoreriaSubmenu">
+          <a href="#" class="no-submenu-arrow">Caja</a>
+          <a href="#" class="no-submenu-arrow">Bancos</a>
+          <a href="#" class="no-submenu-arrow">Valores</a>
+        </div>
+      </div>
+
+      <div class="menu-item" data-submenu="stockSubmenu">
+        <a href="#">Stock ▸</a>
+        <div class="submenu" id="stockSubmenu">
+          <a href="#" class="no-submenu-arrow">Movimientos</a>
+          <a href="#" class="no-submenu-arrow">Ajustes</a>
+          <a href="#" class="no-submenu-arrow">Depósitos</a>
+        </div>
+      </div>
+
+      <div class="menu-item" data-submenu="exteriorSubmenu">
+        <a href="#">C. Exterior ▸</a>
+        <div class="submenu" id="exteriorSubmenu">
+          <a href="#" class="no-submenu-arrow">Importaciones</a>
+          <a href="#" class="no-submenu-arrow">Exportaciones</a>
+        </div>
+      </div>
+
+      <div class="menu-item" data-submenu="contabilidadSubmenu">
+        <a href="#">Contabilidad ▸</a>
+        <div class="submenu" id="contabilidadSubmenu">
+          <a href="#" class="no-submenu-arrow">Asientos</a>
+          <a href="#" class="no-submenu-arrow">Mayores</a>
+          <a href="#" class="no-submenu-arrow">Balances</a>
+        </div>
+      </div>
+
+      <div class="menu-item" data-submenu="favoritosSubmenu">
+        <a href="#">Favoritos ▸</a>
+        <div class="submenu" id="favoritosSubmenu">
+          <a href="#" class="no-submenu-arrow">Mis módulos</a>
+          <a href="#" class="no-submenu-arrow">Accesos rápidos</a>
+        </div>
+      </div>
+
+      <div class="menu-item" data-submenu="recientesSubmenu">
+        <a href="#">Recientes ▸</a>
+        <div class="submenu" id="recientesSubmenu">
+          <a href="#" class="no-submenu-arrow">Última factura</a>
+          <a href="#" class="no-submenu-arrow">Última orden</a>
+        </div>
+      </div>
+
+      <div>
+        <a href="#" class="no-submenu-arrow">Salir</a>
+      </div>
+      <img
+        src="assets/img/AcuaTorre.png"
+        alt="Decoración lateral"
+        class="sidebar-image"
+      />
+    </div>
+
+    <button id="toggle-sidebar" class="toggle-button">&lt;</button>
+
+    <div id="toolbar" class="toolbar">
+      <button id="btn-guardar" title="Guardar">
+        <img src="assets/img/Grabar.bmp" alt="Guardar" />
+      </button>
+      <button id="btn-cobros" title="Cobros">
+        <img src="assets/img/Cotizaciones.bmp" alt="Cobros" />
+      </button>
+      <button id="btn-eliminar" title="Eliminar">
+        <img src="assets/img/Volver.bmp" alt="Eliminar" />
+      </button>
+    </div>
+
+    <div class="main-content">
+      <img
+        src="assets/img/AcuaTorre.png"
+        alt="Fondo"
+        class="background-image"
+      />
+
+      <div id="breadcrumb-display">
+        Última opción utilizada: <span id="current-path">Inicio</span>
+      </div>
+    </div>
+    
+
+    <div
+      id="ventana-comprobantes"
+      class="ventana bg-[#f4f7fb] rounded-xl shadow-xl px-6 py-4 w-[85vw] h-[85vh] font-sans text-sm flex flex-col border border-slate-300"
+      style="display: none"
+    >
+      <div class="ventana-header !rounded-t-2xl !text-white !bg-slate-700">
+        <span class="text-base font-semibold"
+          >Confección de Comprobantes (Ventas)</span
+        >
+        <div class="ventana-botones">
+          <button id="minimizar-ventana">_</button>
+          <button id="cerrar-ventana">×</button>
+        </div>
+      </div>
+
+      <!-- CONTENIDO -->
+      <div class="flex flex-col gap-4 overflow-hidden h-full">
+        <!-- ✅ Cabecera completa en 3 columnas -->
+        <div class="grid grid-cols-3 gap-4 shrink-0">
+          <div class="space-y-2">
+            <label class="block">
+              <span class="text-gray-600 font-medium">Cliente:</span>
+              <input
+                type="text"
+                class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2"
+              />
+            </label>
+            <label class="block">
+              <span class="text-gray-600 font-medium">Condición de pago:</span>
+              <select
+                class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2"
+              >
+                <option>Contado</option>
+                <option>Cuenta corriente</option>
+              </select>
+            </label>
+            <label class="block">
+              <span class="text-gray-600 font-medium">Forma de pago:</span>
+              <input
+                type="text"
+                disabled
+                class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 bg-gray-100"
+              />
+            </label>
+          </div>
+
+          <div class="space-y-2">
+            <label class="block">
+              <span class="text-gray-600 font-medium">Comprobante:</span>
+              <input
+                type="text"
+                class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2"
+              />
+            </label>
+            <label class="block">
+              <span class="text-gray-600 font-medium">Número:</span>
+              <input
+                type="text"
+                class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2"
+              />
+            </label>
+            <label class="block">
+              <span class="text-gray-600 font-medium">Referencia:</span>
+              <input
+                type="text"
+                class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2"
+              />
+            </label>
+          </div>
+
+          <div class="space-y-2">
+            <label class="block">
+              <span class="text-gray-600 font-medium">Fecha:</span>
+              <input
+                type="date"
+                value="2025-07-04"
+                class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2"
+              />
+            </label>
+            <label class="block">
+              <span class="text-gray-600 font-medium">Cant. total:</span>
+              <input
+                type="number"
+                value="0.00"
+                class="mt-1 w-full text-right rounded-md border border-gray-300 px-3 py-2 bg-blue-100 font-semibold"
+              />
+            </label>
+            <label class="block">
+              <span class="text-gray-600 font-medium">Total:</span>
+              <input
+                type="number"
+                value="0.000"
+                class="mt-1 w-full text-right rounded-md border border-gray-300 px-3 py-2 bg-blue-100 font-semibold text-lg"
+              />
+            </label>
+          </div>
+        </div>
+
+        <!-- 📋 Tabla de ítems -->
+        <!-- 📋 Tabla de ítems -->
+        <!-- 📋 Tabla de ítems -->
+        <div
+          class="tabla-scroll border rounded-md shadow-inner overflow-y-auto max-h-[50vh]"
+        >
+          <table class="min-w-full text-xs border-collapse table-auto">
+            <thead
+              class="bg-gray-100 text-slate-800 text-sm border-b border-slate-300"
+            >
+              <tr>
+                <th class="border px-2 py-1">ID Artículo</th>
+                <th class="border px-2 py-1">Descripción</th>
+                <th class="border px-2 py-1">Precio</th>
+                <th class="border px-2 py-1">Desc.</th>
+                <th class="border px-2 py-1">IVA</th>
+                <th class="border px-2 py-1">Precio Final</th>
+                <th class="border px-2 py-1">Total</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <!-- Renglón 1 precargado -->
+              <tr class="text-gray-800 text-sm">
+                <td class="border px-2 py-1">A001</td>
+                <td class="border px-2 py-1">Servicio de Consultoría</td>
+                <td class="border px-2 py-1 text-right">$500.00</td>
+                <td class="border px-2 py-1 text-center">0%</td>
+                <td class="border px-2 py-1 text-center">21%</td>
+                <td class="border px-2 py-1 text-right">$605.00</td>
+                <td class="border px-2 py-1 text-right">$605.00</td>
+              </tr>
+
+              <!-- Renglón 2 precargado -->
+              <tr class="text-gray-800 text-sm">
+                <td class="border px-2 py-1">A002</td>
+                <td class="border px-2 py-1">Producto XYZ</td>
+                <td class="border px-2 py-1 text-right">$120.50</td>
+                <td class="border px-2 py-1 text-center">10%</td>
+                <td class="border px-2 py-1 text-center">21%</td>
+                <td class="border px-2 py-1 text-right">$106.69</td>
+                <td class="border px-2 py-1 text-right">$213.38</td>
+              </tr>
+
+              <!-- 5 Renglones vacíos -->
+              <tr>
+                <td class="border px-2 py-1">
+                  <input
+                    type="text"
+                    class="w-full border-none focus:ring-0 text-xs text-center"
+                    placeholder="ID"
+                  />
+                </td>
+                <td class="border px-2 py-1">
+                  <input
+                    type="text"
+                    class="w-full border-none focus:ring-0 text-xs"
+                    placeholder="Descripción"
+                  />
+                </td>
+                <td class="border px-2 py-1">
+                  <input
+                    type="number"
+                    class="w-full text-right border-none focus:ring-0 text-xs"
+                    placeholder="0.00"
+                  />
+                </td>
+                <td class="border px-2 py-1">
+                  <input
+                    type="text"
+                    class="w-full text-center border-none focus:ring-0 text-xs"
+                    placeholder="%"
+                  />
+                </td>
+                <td class="border px-2 py-1">
+                  <input
+                    type="text"
+                    class="w-full text-center border-none focus:ring-0 text-xs"
+                    placeholder="%"
+                  />
+                </td>
+                <td class="border px-2 py-1 text-right text-gray-500">—</td>
+                <td class="border px-2 py-1 text-right text-gray-500">—</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1">
+                  <input
+                    type="text"
+                    class="w-full border-none focus:ring-0 text-xs text-center"
+                    placeholder="ID"
+                  />
+                </td>
+                <td class="border px-2 py-1">
+                  <input
+                    type="text"
+                    class="w-full border-none focus:ring-0 text-xs"
+                    placeholder="Descripción"
+                  />
+                </td>
+                <td class="border px-2 py-1">
+                  <input
+                    type="number"
+                    class="w-full text-right border-none focus:ring-0 text-xs"
+                    placeholder="0.00"
+                  />
+                </td>
+                <td class="border px-2 py-1">
+                  <input
+                    type="text"
+                    class="w-full text-center border-none focus:ring-0 text-xs"
+                    placeholder="%"
+                  />
+                </td>
+                <td class="border px-2 py-1">
+                  <input
+                    type="text"
+                    class="w-full text-center border-none focus:ring-0 text-xs"
+                    placeholder="%"
+                  />
+                </td>
+                <td class="border px-2 py-1 text-right text-gray-500">—</td>
+                <td class="border px-2 py-1 text-right text-gray-500">—</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1">
+                  <input
+                    type="text"
+                    class="w-full border-none focus:ring-0 text-xs text-center"
+                    placeholder="ID"
+                  />
+                </td>
+                <td class="border px-2 py-1">
+                  <input
+                    type="text"
+                    class="w-full border-none focus:ring-0 text-xs"
+                    placeholder="Descripción"
+                  />
+                </td>
+                <td class="border px-2 py-1">
+                  <input
+                    type="number"
+                    class="w-full text-right border-none focus:ring-0 text-xs"
+                    placeholder="0.00"
+                  />
+                </td>
+                <td class="border px-2 py-1">
+                  <input
+                    type="text"
+                    class="w-full text-center border-none focus:ring-0 text-xs"
+                    placeholder="%"
+                  />
+                </td>
+                <td class="border px-2 py-1">
+                  <input
+                    type="text"
+                    class="w-full text-center border-none focus:ring-0 text-xs"
+                    placeholder="%"
+                  />
+                </td>
+                <td class="border px-2 py-1 text-right text-gray-500">—</td>
+                <td class="border px-2 py-1 text-right text-gray-500">—</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1">
+                  <input
+                    type="text"
+                    class="w-full border-none focus:ring-0 text-xs text-center"
+                    placeholder="ID"
+                  />
+                </td>
+                <td class="border px-2 py-1">
+                  <input
+                    type="text"
+                    class="w-full border-none focus:ring-0 text-xs"
+                    placeholder="Descripción"
+                  />
+                </td>
+                <td class="border px-2 py-1">
+                  <input
+                    type="number"
+                    class="w-full text-right border-none focus:ring-0 text-xs"
+                    placeholder="0.00"
+                  />
+                </td>
+                <td class="border px-2 py-1">
+                  <input
+                    type="text"
+                    class="w-full text-center border-none focus:ring-0 text-xs"
+                    placeholder="%"
+                  />
+                </td>
+                <td class="border px-2 py-1">
+                  <input
+                    type="text"
+                    class="w-full text-center border-none focus:ring-0 text-xs"
+                    placeholder="%"
+                  />
+                </td>
+                <td class="border px-2 py-1 text-right text-gray-500">—</td>
+                <td class="border px-2 py-1 text-right text-gray-500">—</td>
+              </tr>
+              <tr>
+                <td class="border px-2 py-1">
+                  <input
+                    type="text"
+                    class="w-full border-none focus:ring-0 text-xs text-center"
+                    placeholder="ID"
+                  />
+                </td>
+                <td class="border px-2 py-1">
+                  <input
+                    type="text"
+                    class="w-full border-none focus:ring-0 text-xs"
+                    placeholder="Descripción"
+                  />
+                </td>
+                <td class="border px-2 py-1">
+                  <input
+                    type="number"
+                    class="w-full text-right border-none focus:ring-0 text-xs"
+                    placeholder="0.00"
+                  />
+                </td>
+                <td class="border px-2 py-1">
+                  <input
+                    type="text"
+                    class="w-full text-center border-none focus:ring-0 text-xs"
+                    placeholder="%"
+                  />
+                </td>
+                <td class="border px-2 py-1">
+                  <input
+                    type="text"
+                    class="w-full text-center border-none focus:ring-0 text-xs"
+                    placeholder="%"
+                  />
+                </td>
+                <td class="border px-2 py-1 text-right text-gray-500">—</td>
+                <td class="border px-2 py-1 text-right text-gray-500">—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 📦 Footer resumen -->
+        <div class="grid grid-cols-3 gap-4 pt-3 border-t shrink-0">
+          <div>
+            <label class="block text-gray-600"
+              >Cantidad de ítems: <span class="font-bold">0</span></label
+            >
+          </div>
+          <div class="space-y-1">
+            <label class="block"
+              >Subtotal:
+              <input
+                type="number"
+                class="w-full mt-1 rounded-md px-3 py-1 border text-right bg-blue-50"
+                value="0.00"
+              />
+            </label>
+            <label class="block"
+              >Impuestos:
+              <input
+                type="number"
+                class="w-full mt-1 rounded-md px-3 py-1 border text-right bg-blue-50"
+                value="0.00"
+              />
+            </label>
+          </div>
+          <div class="flex flex-col justify-between">
+            <label class="block"
+              >Total:
+              <input
+                type="number"
+                class="w-full mt-1 rounded-md px-3 py-2 border text-right bg-blue-100 font-bold text-lg"
+                value="0.00"
+              />
+            </label>
+            <div class="flex gap-2 mt-2">
+              <button
+                class="flex-1 bg-slate-200 px-3 py-1 rounded hover:bg-slate-300"
+              >
+                Desc. Marca
+              </button>
+              <button
+                class="flex-1 bg-slate-200 px-3 py-1 rounded hover:bg-slate-300"
+              >
+                Impuestos
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="ventana-listados"
+      class="ventana bg-white p-6 rounded-2xl shadow-2xl w-[720px] font-sans text-sm"
+      style="display: none"
+    >
+      <div class="ventana-header !rounded-t-2xl !text-white !bg-slate-700">
+        <span class="text-base font-semibold"
+          >Listado de Comprobantes de ventas</span
+        >
+        <div class="ventana-botones">
+          <button id="minimizar-listados">_</button>
+          <button id="cerrar-listados">×</button>
+        </div>
+      </div>
+
+      <div class="ventana-body ventana-listados-body grid gap-4">
+        <fieldset>
+          <legend class="font-semibold text-gray-800">Formato</legend>
+          <label class="block">
+            <span class="text-gray-600">Título</span>
+            <input
+              type="text"
+              value="LISTADOS = FTC - N/C - N/D"
+              class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2"
+            />
+          </label>
+
+          <div class="flex gap-4 mt-3">
+            <label class="flex-1">
+              <span class="text-gray-600">Órden</span>
+              <select
+                class="w-full mt-1 rounded-md border border-gray-300 px-3 py-2"
+              >
+                <option>Razón social</option>
+                <option>Fecha</option>
+                <option>Importe</option>
+              </select>
+            </label>
+            <label class="flex-[0.3]">
+              <span class="text-gray-600">Formato</span>
+              <input
+                type="number"
+                value="1"
+                class="mt-1 w-full rounded-md border border-gray-300 px-3 py-2"
+              />
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="grid grid-cols-2 gap-4">
+          <fieldset>
+            <legend class="font-semibold text-gray-800">
+              Selectivo Filtros
+            </legend>
+            <label
+              >Zonas:
+              <span class="ml-2 text-blue-600 font-medium">Todos</span></label
+            ><br />
+            <label
+              >Comprobantes:
+              <span class="ml-2 text-blue-600 font-medium">Algunos</span></label
+            ><br />
+            <label
+              >Vendedores:
+              <span class="ml-2 text-blue-600 font-medium">Alguno</span></label
+            ><br />
+            <label
+              >Solo pendiente a de:
+              <span class="ml-2 text-blue-600 font-medium">Todo</span></label
+            >
+          </fieldset>
+
+          <fieldset>
+            <legend class="font-semibold text-gray-800">
+              Filtros por Rango
+            </legend>
+            <label
+              >Clientes:
+              <span class="ml-2 text-blue-600 font-medium">Primero</span></label
+            ><br />
+            <label
+              >Bonificación 1:
+              <span class="ml-2 text-blue-600 font-medium">Primero</span></label
+            ><br />
+            <label
+              >Bonificación 2:
+              <span class="ml-2 text-blue-600 font-medium">Primero</span></label
+            ><br />
+            <label
+              >Fecha Proceso:
+              <span class="ml-2 text-blue-600 font-medium">Último</span></label
+            >
+          </fieldset>
+        </div>
+
+        <fieldset>
+          <legend class="font-semibold text-gray-800">Datos</legend>
+          <label
+            >Solo anulados:
+            <span class="ml-2 text-blue-600 font-medium">No</span></label
+          >
+        </fieldset>
+
+        <div class="grid grid-cols-2 gap-4 items-start">
+          <div class="flex gap-2">
+            <button class="bg-white border border-gray-300 p-2 rounded shadow">
+              <img
+                src="assets/img/Pantalla.bmp"
+                alt="Guardar"
+                class="w-10 h-10"
+              />
+            </button>
+            <button class="bg-white border border-gray-300 p-2 rounded shadow">
+              <img
+                src="assets/img/ExcelNuevo.bmp"
+                alt="Excel"
+                class="w-10 h-10"
+              />
+            </button>
+          </div>
+
+          <div class="space-y-2">
+            <select class="w-full rounded-md border border-gray-300 px-3 py-2">
+              <option>Microsoft Impresora</option>
+            </select>
+            <label class="block text-blue-600 text-sm"
+              >Utilidad de Copias: 1</label
+            >
+            <div class="flex flex-col gap-1 text-xs">
+              <label
+                ><input type="checkbox" /> Utilizar separador de miles</label
+              >
+              <label
+                ><input type="checkbox" /> Enviar Word / Excel / Ascii /
+                Email</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-end gap-4 mt-4">
+          <button
+            class="imprimir-btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          >
+            Imprimir
+          </button>
+          <button
+            class="cerrar-listado-btn bg-gray-100 text-gray-800 px-4 py-2 rounded border hover:bg-gray-200"
+          >
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      id="listado-generado"
+      class="ventana bg-white p-6 rounded-2xl shadow-xl w-[600px] font-sans text-sm"
+      style="display: none"
+    >
+      <div class="ventana-header !rounded-t-2xl !text-white !bg-slate-700">
+        <span class="text-base font-semibold">Listado Generado</span>
+        <div class="ventana-botones">
+          <button
+            onclick="document.getElementById('listado-generado').style.display = 'none'"
+          >
+            ×
+          </button>
+        </div>
+      </div>
+
+      <div class="ventana-body mt-4">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="border px-3 py-2 text-left">Nombre del Comprobante</th>
+              <th class="border px-3 py-2 text-right">Importe</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hover:bg-gray-50">
+              <td class="border px-3 py-2">Factura A</td>
+              <td class="border px-3 py-2 text-right">$1500.00</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="border px-3 py-2">Recibo B</td>
+              <td class="border px-3 py-2 text-right">$250.50</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="border px-3 py-2">Ticket C</td>
+              <td class="border px-3 py-2 text-right">$800.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+<!-- Spinner overlay -->
+<div
+  id="spinner-overlay"
+  class="fixed inset-0 bg-black bg-opacity-40 flex-col items-center justify-center z-[99999]"
+  style="display: none"
+>
+  <div
+    class="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin mb-4 mx-auto"
+  ></div>
+  <p
+    id="spinner-message"
+    class="text-white text-lg font-medium bg-slate-800 bg-opacity-60 px-4 py-2 rounded-xl shadow text-center"
+  >
+    Procesando...
+  </p>
+</div>
+
+
+    <div
+      id="mensaje-confirmacion"
+      class="fixed top-6 right-6 bg-green-600 text-white px-4 py-2 rounded shadow-lg z-[99999]"
+      style="display: none"
+    >
+      Comprobante guardado
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
